@@ -4,40 +4,39 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float playerSpeed = 2;
-    public float jump = 3;
-    public Rigidbody2D rb;
-    public BoxCollider2D checkGround;
+    public float speed = 8;
+    public Vector2 jumpHeight;
 
-    // Start is called before the first frame update
+    bool isOnGround;
+    Rigidbody2D rb;
+    
+
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        //walking
         float horizon = Input.GetAxis("Horizontal");
-        float variableName = horizon * playerSpeed * Time.deltaTime;
-        float jumping = 0;
-        if (Input.GetKey("up") || OnTriggerStay(checkGround)) {
-            jumping = jump * Time.deltaTime;
+        rb.velocity = new Vector2(speed * horizon, rb.velocity.y);
+
+        //jumping
+        if(Input.GetKey(KeyCode.UpArrow) && isOnGround)
+        {
+            rb.AddForce(jumpHeight, ForceMode2D.Impulse);
         }
-        
-        transform.position = transform.position + new Vector3(variableName, jumping , 0);
 
-        //Vector2 movement = new Vector2(horizon, 0);
-
-        //rb.AddForce(playerSpeed * movement);
+        isOnGround = false;
     }
 
-    bool OnTriggerStay(Collider2D collider)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collider.gameObject.tag == "Surface")
+        if (collision.gameObject.CompareTag("Surface"))
         {
-            return true;
+            isOnGround = true;
+            rb.velocity = Vector2.zero;
         }
-        return false;
     }
 }
