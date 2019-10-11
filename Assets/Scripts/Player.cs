@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     public float speed = 8;
     public Vector2 jumpHeight;
+    public int health = 3;
 
     bool isOnGround;
     Rigidbody2D rb;
@@ -37,6 +38,15 @@ public class Player : MonoBehaviour
         {
             isOnGround = true;
             rb.velocity = Vector2.zero;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            health--;
+
         }
     }
 }
