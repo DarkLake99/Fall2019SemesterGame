@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     bool isOnGround;
     bool inHitStun = false;
     Rigidbody2D rb;
-    
+
 
     void Start()
     {
@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
             {
                 Knockback(500, 1);
             }
-            else if(rb.transform.position.x <= collision.transform.position.x)
+            else if (rb.transform.position.x <= collision.transform.position.x)
             {
                 Knockback(500, -1);
             }
