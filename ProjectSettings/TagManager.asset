@@ -7,6 +7,7 @@ TagManager:
   - Bullet
   - Surface
   - Enemy
+  - DeathScreen
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Pause
   - 
   - 
   - 
