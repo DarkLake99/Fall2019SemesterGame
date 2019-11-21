@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Destructable
+  - Surface
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -14,7 +16,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - arm
   - 
   - 
   - 
