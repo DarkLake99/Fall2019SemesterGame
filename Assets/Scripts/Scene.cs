@@ -5,17 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Scene : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   //took out start and update since it was obsolete to scene class - Britney 11/21/19
 
     public void LoadLevel(string level)
     {
