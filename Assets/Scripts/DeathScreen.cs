@@ -13,6 +13,7 @@ public class DeathScreen : MonoBehaviour
     void Start()
     {
         deathScreen.SetActive(false);
+        Time.timeScale = 1f;
 
         player = GameObject.FindGameObjectWithTag("Player");
         health = player.GetComponent<Player>().health;

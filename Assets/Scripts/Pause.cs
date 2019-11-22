@@ -25,7 +25,7 @@ public class Pause : MonoBehaviour
     {
         health = player.GetComponent<Player>().health;
 
-        if (Input.GetKeyDown(KeyCode.Escape) && health > 1)
+        if (Input.GetKey(KeyCode.Escape) && health > 1)
         {
             if(Time.timeScale==1)
             {

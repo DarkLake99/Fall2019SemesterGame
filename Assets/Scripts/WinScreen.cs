@@ -10,6 +10,7 @@ public class WinScreen : MonoBehaviour
     void Start()
     {
         winScreen.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
