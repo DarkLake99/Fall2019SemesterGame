@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Title.unity
     guid: 0eb38501922ad3e4f8367e79e65a87cf
   - enabled: 1
-    path: Assets/Scenes/Ryan-Tester.unity
-    guid: 9fb0ed922b5484311a8d023584041b6a
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 30ec2b741f4fa4a949c3192da991ee08
+    path: Assets/Scenes/SceneOne.unity
+    guid: 59cfbaf532bc546ba8ec91c8f9a6743d
   m_configObjects: {}
