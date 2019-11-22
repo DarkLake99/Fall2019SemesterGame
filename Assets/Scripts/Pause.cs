@@ -6,8 +6,9 @@ public class Pause : MonoBehaviour
 {
 
     public GameObject pauseMenu;
+    public GameObject dedMenu;
 
-    int health;
+    float health;
     GameObject player;
    
 
@@ -35,9 +36,11 @@ public class Pause : MonoBehaviour
             {
                 PauseOff();
             }
+
         }
     }
-    
+
+   
     public void PauseON()
     {
         pauseMenu.SetActive(true);

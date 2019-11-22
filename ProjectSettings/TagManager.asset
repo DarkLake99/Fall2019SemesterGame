@@ -8,6 +8,7 @@ TagManager:
   - Surface
   - Enemy
   - firePoint
+  - KillBox
   layers:
   - Default
   - TransparentFX

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DeathScreen : MonoBehaviour
 {
-    int health;
+    float health;
     GameObject player;
 
     public GameObject deathScreen;

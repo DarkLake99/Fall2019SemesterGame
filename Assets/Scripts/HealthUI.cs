@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HealthUI : MonoBehaviour
 {
 
-    int health;
+    float health;
     GameObject player;
     Text txt;
 

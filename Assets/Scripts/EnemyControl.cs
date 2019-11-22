@@ -30,7 +30,7 @@ public class EnemyControl : MonoBehaviour {
 		if (rb.transform.position.x >= intPos + maxDisRight)						//max right
 			moveDir = -1;
 		rb.velocity = new Vector2 (moveDir * moveSpeed, rb.velocity.y);
-		if (enemyHealth < 0)
+		if (enemyHealth < 1)
 		{
 			Destroy(enemy);
 		}

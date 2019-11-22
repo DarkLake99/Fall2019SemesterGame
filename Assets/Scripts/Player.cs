@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     public float speed = 8;
     public Vector2 jumpHeight;
-    public int health = 3;
+    public float health = 3;
 
     bool isOnGround;
     bool inHitStun = false;
@@ -53,6 +53,10 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.CompareTag("KillBox"))
+        {
+            health = 0f;
+        }
         if (collision.gameObject.CompareTag("Enemy"))
         {
             health--;
@@ -65,7 +69,11 @@ public class Player : MonoBehaviour
                 Knockback(500, -1);
             }
         }
+
+        
     }
+    
+    
 
     private void Knockback(float knockPwr, int knockDir)
     {
