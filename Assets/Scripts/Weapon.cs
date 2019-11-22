@@ -6,13 +6,14 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public float fireRate = 0;
-    public float Damage = 10;
+    public float Damage = 1;
     public LayerMask notToHit;
     float timeToFire = 0;
     Transform firePoint;
     
     //public GameObject collides;
     private bool hits = false;
+    private float objectHealth = 0f;
     
     
     // Start is called before the first frame update
@@ -45,23 +46,49 @@ public class Weapon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag=="Destructable"|| other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag=="Destructable")
         {
             hits = true;
+            objectHealth = 1;
         }
+        if (other.gameObject.tag == "Enemy")
+        {
+            hits = true;
+            objectHealth = 2;
+
+        }
+        
     }
 
     void Shoot()
     {
+       
         Vector2 mousePosition = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
         Vector2 firePointPosition = new Vector2(firePoint.position.x, firePoint.position.y);
         RaycastHit2D hit = Physics2D.Raycast(firePointPosition, mousePosition - firePointPosition, 100, notToHit);
-        Debug.DrawLine(firePointPosition, (mousePosition - firePointPosition)*100,Color.white);
-        if (hits)
+        Debug.DrawLine(firePointPosition , (mousePosition - firePointPosition)*100,Color.white);
+        
+       
+        if (hit.collider!=null)
         {
+            EnemyControl enemy = hit.transform.GetComponent<EnemyControl>();
+            dWall weakWall = hit.transform.GetComponent<dWall>();
+            
             Debug.DrawLine(firePointPosition, hit.point, Color.red);
             Debug.Log("We hit " + hit.collider.name + " and did " + Damage + " damage.");
-            
+            if (objectHealth==1f)
+            {
+                weakWall.WallHit();
+            }
+            else if (objectHealth == 2f)
+            {
+                enemy.EnemyHit();
+            }
+
+            objectHealth = 0f;
+            hits = false;
+
+
         };
     }
 }

@@ -9,6 +9,8 @@ public class EnemyControl : MonoBehaviour {
 	public float moveSpeed = 4;
 	public float maxDisRight;
 	public float maxDisLeft;
+	public float enemyHealth = 3;
+	public GameObject enemy;
 
 	float intPos;
 	Rigidbody2D rb;
@@ -22,12 +24,21 @@ public class EnemyControl : MonoBehaviour {
 
 		moveDir = 1;
 	}
-	
 	void Update () {
 		if (rb.transform.position.x <= intPos - maxDisLeft)							//max left
 			moveDir = 1;
 		if (rb.transform.position.x >= intPos + maxDisRight)						//max right
 			moveDir = -1;
 		rb.velocity = new Vector2 (moveDir * moveSpeed, rb.velocity.y);
+		if (enemyHealth < 0)
+		{
+			Destroy(enemy);
+		}
 	}
+
+	public void EnemyHit()
+	{
+		enemyHealth--;
+	}
+	
 }

@@ -5,7 +5,8 @@ using UnityEngine;
 public class dWall : MonoBehaviour
 {
     // Start is called before the first frame update
-    private int health = 100;
+    public float health = 3;
+    public GameObject wall;
     void Start()
     {
         
@@ -14,11 +15,11 @@ public class dWall : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {/*
-        if (health == 0){
-            dWall.dissapear();
+    {
+        if (health < 0){
+           Destroy(wall);
         }
-        */
+        
     }
 
     public void OnTriggerEnter(Collider other)
@@ -29,6 +30,10 @@ public class dWall : MonoBehaviour
             }*/
     }
 
+    public void WallHit()
+    {
+        health--;
+    }
     private void dissapear()
     {
 
