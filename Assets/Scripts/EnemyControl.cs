@@ -25,14 +25,14 @@ public class EnemyControl : MonoBehaviour {
 		moveDir = 1;
 	}
 
-	private void OnCollisionEnter2D(Collision2D other)
+	/*private void OnCollisionEnter2D(Collision2D other)
 	{
 		if(other.gameObject.CompareTag("KillBox"))
 		{
 			Destroy(gameObject);
 		}
 		
-	}
+	}*/
 
 	void Update () {
 		if (rb.transform.position.x <= intPos - maxDisLeft)							//max left

@@ -14,6 +14,7 @@
           <e p="Player.cs" t="Include" />
           <e p="Rotation.cs" t="Include" />
           <e p="Scene.cs" t="Include" />
+          <e p="SoundManager.cs" t="Include" />
           <e p="Weapon.cs" t="Include" />
           <e p="WinScreen.cs" t="Include" />
         </e>

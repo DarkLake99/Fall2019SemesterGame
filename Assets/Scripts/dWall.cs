@@ -8,11 +8,7 @@ public class dWall : MonoBehaviour
     public float health = 3;
     public AudioSource woodBreak;
     public AudioSource brokenWood;
-    void Start()
-    {
-        
-
-    }
+ 
 
     // Update is called once per frame
     void Update()

@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
             }
 
             //jumping
-            if (Input.GetKey(KeyCode.UpArrow) && isOnGround)
+            if ((Input.GetKey(KeyCode.UpArrow)|| Input.GetKey(KeyCode.W))&& isOnGround)
             {
                 rb.AddForce(jumpHeight, ForceMode2D.Impulse);
             }
