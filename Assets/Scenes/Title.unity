@@ -413,5 +413,20 @@ PrefabInstance:
 
         Burrito'
       objectReference: {fileID: 0}
+    - target: {fileID: 6211750510767115607, guid: 65f45c9a2b495415cbeb47e514783502,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6211750510938970505, guid: 65f45c9a2b495415cbeb47e514783502,
+        type: 3}
+      propertyPath: m_Text
+      value: P L A Y
+      objectReference: {fileID: 0}
+    - target: {fileID: 6211750512046661472, guid: 65f45c9a2b495415cbeb47e514783502,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 92
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65f45c9a2b495415cbeb47e514783502, type: 3}

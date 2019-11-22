@@ -6,6 +6,8 @@ public class dWall : MonoBehaviour
 {
     // Start is called before the first frame update
     public float health = 3;
+    public AudioSource woodBreak;
+    public AudioSource brokenWood;
     void Start()
     {
         
@@ -15,14 +17,16 @@ public class dWall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (health < 0){
-           Destroy(gameObject);
+        if (health < 1){
+           brokenWood.Play();
+            Destroy(gameObject);
         }
         
     }
     
     public void WallHit()
     {
+        woodBreak.Play();
         health--;
     }
    

@@ -10,6 +10,9 @@ public class Weapon : MonoBehaviour
     public LayerMask notToHit;
     float timeToFire = 0;
     Transform firePoint;
+
+    public AudioSource gunfire;
+    public AudioSource woodBreak;
     
     //public GameObject collides;
     private bool hits = false;
@@ -31,14 +34,16 @@ public class Weapon : MonoBehaviour
     {
         if (fireRate == 0)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0)) 
-            Shoot();
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+                gunfire.Play();
+                Shoot();
         }
         else
         {
             if(Input.GetKeyDown(KeyCode.Mouse0)&& Time.time > timeToFire)
             {
                 timeToFire = Time.time + 1 / fireRate;
+                gunfire.Play();
                 Shoot();
             }
         }
@@ -78,6 +83,7 @@ public class Weapon : MonoBehaviour
             Debug.Log("We hit " + hit.collider.name + " and did " + Damage + " damage.");
             if (hit.collider.tag=="Destructable")
             {
+                woodBreak.Play();
                 weakWall.WallHit();
             }
             else if (hit.collider.tag=="Enemy")
