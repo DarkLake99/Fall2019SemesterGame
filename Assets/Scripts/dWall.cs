@@ -6,7 +6,6 @@ public class dWall : MonoBehaviour
 {
     // Start is called before the first frame update
     public float health = 3;
-    public GameObject wall;
     void Start()
     {
         
@@ -17,25 +16,14 @@ public class dWall : MonoBehaviour
     void Update()
     {
         if (health < 0){
-           Destroy(wall);
+           Destroy(gameObject);
         }
         
     }
-
-    public void OnTriggerEnter(Collider other)
-    {
-      /*      if(other.tag == bullet)
-            {
-                health -= 25;
-            }*/
-    }
-
+    
     public void WallHit()
     {
         health--;
     }
-    private void dissapear()
-    {
-
-    }
+   
 }

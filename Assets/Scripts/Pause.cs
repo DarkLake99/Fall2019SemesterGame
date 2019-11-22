@@ -6,7 +6,6 @@ public class Pause : MonoBehaviour
 {
 
     public GameObject pauseMenu;
-    public GameObject dedMenu;
 
     float health;
     GameObject player;

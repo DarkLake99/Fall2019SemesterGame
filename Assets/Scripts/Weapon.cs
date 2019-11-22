@@ -44,7 +44,7 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    /*private void OnTriggerEnter2D(Collider2D other) redundant code
     {
         if (other.gameObject.tag=="Destructable")
         {
@@ -58,7 +58,7 @@ public class Weapon : MonoBehaviour
 
         }
         
-    }
+    }*/
 
     void Shoot()
     {
@@ -76,19 +76,15 @@ public class Weapon : MonoBehaviour
             
             Debug.DrawLine(firePointPosition, hit.point, Color.red);
             Debug.Log("We hit " + hit.collider.name + " and did " + Damage + " damage.");
-            if (objectHealth==1f)
+            if (hit.collider.tag=="Destructable")
             {
                 weakWall.WallHit();
             }
-            else if (objectHealth == 2f)
+            else if (hit.collider.tag=="Enemy")
             {
                 enemy.EnemyHit();
             }
-
-            objectHealth = 0f;
-            hits = false;
-
-
+            
         };
     }
 }

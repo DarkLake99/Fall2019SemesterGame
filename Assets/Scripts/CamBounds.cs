@@ -32,7 +32,7 @@ public class CamBounds : MonoBehaviour
         transform.position = new Vector3(posX, posY, transform.position.z);
         if (bounds)
         {
-            transform.position = new Vector3(Mathf.Clamp(transform.position.x,minCamPos.x+Time.deltaTime, maxCamPos.x),
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x,minCamPos.x+Time.time, maxCamPos.x),
                     Mathf.Clamp(transform.position.y, minCamPos.y,maxCamPos.y),
                     Mathf.Clamp(transform.position.z,minCamPos.z,maxCamPos.z));
             
