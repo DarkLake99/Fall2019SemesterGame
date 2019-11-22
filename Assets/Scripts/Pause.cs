@@ -9,6 +9,7 @@ public class Pause : MonoBehaviour
 
     int health;
     GameObject player;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,7 @@ public class Pause : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape) && health > 1)
         {
-            if(Time.timeScale == 1)
+            if(Time.timeScale==1)
             {
                 PauseON();
             }
@@ -40,12 +41,12 @@ public class Pause : MonoBehaviour
     public void PauseON()
     {
         pauseMenu.SetActive(true);
-        Time.timeScale = 0;
+        Time.timeScale = 0f;
     }
 
     public void PauseOff()
     {
         pauseMenu.SetActive(false);
-        Time.timeScale = 1;
+        Time.timeScale = 1f;
     }
 }
